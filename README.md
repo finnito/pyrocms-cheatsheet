@@ -11,27 +11,24 @@
      ( `.__ _  ___,')      <_,-'__,'
       `'(_ )_)(_)_)'
 ```
+# PyroCMS Cheat-sheet
 
 <!-- MarkdownTOC autolink="true" style="ordered" -->
 
-1. [PyroCMS Cheat-sheet](#pyrocms-cheat-sheet)
-    1. [Installing](#installing)
-    1. [Deploying](#deploying)
-    1. [PHP Artisan](#php-artisan)
-    1. [Addons](#addons)
-        1. [SPAM Prevention](#spam-prevention)
-            1. [Akismet](#akismet)
-            1. [reCAPTCHA](#recaptcha)
-            1. [Honeypot](#honeypot)
-        1. [Sending Mail](#sending-mail)
-    1. [Theming](#theming)
-        1. [Laravel Mix](#laravel-mix)
-    1. [Thanks](#thanks)
+1. [Installing](#installing)
+1. [Deploying](#deploying)
+1. [PHP Artisan](#php-artisan)
+1. [Addons](#addons)
+    1. [SPAM Prevention](#spam-prevention)
+        1. [Akismet](#akismet)
+        1. [reCAPTCHA](#recaptcha)
+        1. [Honeypot](#honeypot)
+    1. [Sending Mail](#sending-mail)
+1. [Theming](#theming)
+    1. [Laravel Mix](#laravel-mix)
+1. [Thanks](#thanks)
 
 <!-- /MarkdownTOC -->
-
-
-# PyroCMS Cheat-sheet
 
 ## Installing
 
