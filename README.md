@@ -23,6 +23,7 @@
             1. [Akismet](#akismet)
             1. [reCAPTCHA](#recaptcha)
             1. [Honeypot](#honeypot)
+        1. [Sending Mail](#sending-mail)
     1. [Theming](#theming)
         1. [Laravel Mix](#laravel-mix)
     1. [Thanks](#thanks)
@@ -203,6 +204,76 @@ Depending on your setup, you may also need to add some CSS like this to hide the
     top: -2000000px;
     left: -2000000px;
 }
+```
+
+### Sending Mail
+
+Add this to the top of your file:
+
+```php
+use Illuminate\Support\Facades\Mail;
+use Finnito\CanterburyPlumbingAndGasTheme\Mail\YourMailable;
+```
+
+Then inside your file you can send mail like this:
+
+```php
+Mail::to(env("CONTACT_EMAIL_RECEIPIENTS"))
+    ->cc(env("CONTACT_EMAIL_CC"))
+    ->send(new YourMailable($values));
+```
+
+You need to create an extension of `Mailable`, which might look something like this:
+
+```php
+<?php namespace Finnito\CanterburyPlumbingAndGasTheme\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class YourMailable extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $values;
+
+    /**
+     * Create a new message instance.
+     *
+     * @param  \App\Models\Order  $order
+     * @return void
+     */
+    public function __construct($values)
+    {
+        $this->values = $values;
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->view('theme::mail.contact')
+            ->subject("CP&G: Online Contact")
+            ->replyTo($this->values["email"])
+            ->with(["values" => $this->values]);
+    }
+}
+```
+
+And last but not least, a twig template to generate your email body should also exist.
+
+```html
+<p>
+    <strong>Name:</strong> {{ values.name }}<br>
+    <strong>Email:</strong> {{ values.email }}<br>
+    <strong>Phone:</strong> {{ values.phone }}<br>
+</p>
+
+<p>{{ values.job }}</p>
 ```
 
 ## Theming
