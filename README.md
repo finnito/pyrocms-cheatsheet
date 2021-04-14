@@ -190,9 +190,18 @@ You can now add it as a field to your form via the Admin panel, or via your form
 ```php
 protected $fields = [
     "honeypot" =>type" => "fritzandandre.field_type.honeypot",
-    ], [
-        "
+    ],
 ];
+```
+
+Depending on your setup, you may also need to add some CSS like this to hide the honeypot input.
+
+```css
+.winnie-the-pooh {
+    position: absolute;
+    top: -2000000px;
+    left: -2000000px;
+}
 ```
 
 ## Theming
