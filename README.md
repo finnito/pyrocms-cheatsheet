@@ -189,7 +189,8 @@ You can now add it as a field to your form via the Admin panel, or via your form
 
 ```php
 protected $fields = [
-    "honeypot" =>type" => "fritzandandre.field_type.honeypot",
+    "honeypot" => [
+        "type" => "fritzandandre.field_type.honeypot",
     ],
 ];
 ```
