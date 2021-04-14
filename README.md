@@ -37,7 +37,7 @@
 
 ```bash
 composer create-project pyrocms/pyrocms folder-name
-php artisan install --ready
+php artisan install
 
 # Remove `anomaly/installer-module` from `composer.json`
 
