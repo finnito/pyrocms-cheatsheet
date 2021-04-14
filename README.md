@@ -24,6 +24,9 @@
         1. [reCAPTCHA](#recaptcha)
         1. [Honeypot](#honeypot)
     1. [Sending Mail](#sending-mail)
+    1. [Custom Forms](#custom-forms)
+        1. [Rendering Forms](#rendering-forms)
+        1. [Form Slugs](#form-slugs)
 1. [Theming](#theming)
     1. [Laravel Mix](#laravel-mix)
 1. [Thanks](#thanks)
@@ -271,6 +274,34 @@ And last but not least, a twig template to generate your email body should also 
 </p>
 
 <p>{{ values.job }}</p>
+```
+
+### Custom Forms
+
+#### Rendering Forms
+
+You can display custom forms in Twig like so:
+
+```html
+<!-- If you need control: -->
+{% set form = form('contact_form').get() %}
+{{ form.open()|raw }}
+{{ form.fields|raw }}
+{{ form.actions|raw }}
+{{ form.close()|raw }}
+
+<!-- Or more simply: -->
+{{ form('contact_form').get()|raw }}
+```
+
+#### Form Slugs
+
+Form builders can be bound to a custom slug in a service provider like so:
+
+```php
+protected $bindings = [
+    "contact_form" => \Finnito\CanterburyPlumbingAndGasTheme\Form\ContactFormBuilder::class,
+];
 ```
 
 ## Theming
