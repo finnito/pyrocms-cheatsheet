@@ -17,6 +17,7 @@
 1. [PyroCMS Cheat-sheet](#pyrocms-cheat-sheet)
     1. [Installing](#installing)
     1. [Deploying](#deploying)
+    1. [PHP Artisan](#php-artisan)
     1. [Theming](#theming)
         1. [Laravel Mix](#laravel-mix)
     1. [Thanks](#thanks)
@@ -67,6 +68,19 @@ php artisan httpcache:clear
 
 # Just in case
 composer dump-autoload --profile;
+```
+
+## PHP Artisan
+
+```bash
+# View all commands
+php artisan list
+
+# Install an addon
+php artisan addon:install anomaly.module.streams
+
+# Migrate an addon
+php artisan migrate --addon=anomaly.module.streams
 ```
 
 ## Theming
