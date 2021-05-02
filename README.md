@@ -40,6 +40,9 @@
 composer create-project pyrocms/pyrocms folder-name
 php artisan install
 
+# Occasionally you may need to:
+mkdir storage/httpcache
+
 # Remove `anomaly/installer-module` from `composer.json`
 
 composer update
