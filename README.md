@@ -28,6 +28,7 @@
         1. [Rendering Forms](#rendering-forms)
         1. [Form Slugs](#form-slugs)
 1. [Theming](#theming)
+    1. [Creating a Theme](#creating-a-theme)
     1. [Laravel Mix](#laravel-mix)
 1. [Thanks](#thanks)
 
@@ -305,6 +306,15 @@ protected $bindings = [
 ```
 
 ## Theming
+
+### Creating a Theme
+
+```bash
+# Create a theme
+php artisan make:addon finnito.theme.fitlytics
+```
+
+I usually delete
 
 ### Laravel Mix
 
